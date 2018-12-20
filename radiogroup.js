@@ -22,8 +22,9 @@
 
     this.el.addEventListener('keydown', this.handleKeyDown.bind(this));
     this.el.addEventListener('click', this.handleClick.bind(this));
-
-    // Any more initialization to do here?
+    
+    this.el.setAttribute('role', 'radiogroup');
+    //为radiogroup设置aria role
 
     var firstButton = true;
     for (var button of this.buttons) {
@@ -33,7 +34,7 @@
       } else {
         button.tabIndex = "-1";
       }
-
+        button.setAttribute('role','radio');
       // What about here?
     }
 
@@ -97,8 +98,7 @@
     this.focusedButton = this.buttons[this.focusedIdx];
     this.focusedButton.tabIndex = 0;
     this.focusedButton.focus();
-    this.focusedButton.setAttribute('checked', '');
-
+    
     // ... we probably want to do some stuff here, too ...
 
   };
