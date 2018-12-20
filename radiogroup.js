@@ -98,6 +98,7 @@
     this.focusedButton = this.buttons[this.focusedIdx];
     this.focusedButton.tabIndex = 0;
     this.focusedButton.focus();
+    this.focusedButton.setAttribute('checked', '');
     this.focusedButton.setAttribute('aria-checked'，'true');
     // ... we probably want to do some stuff here, too ...
 
